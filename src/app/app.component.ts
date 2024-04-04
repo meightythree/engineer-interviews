@@ -1,20 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { NavbarComponent } from './components/navbar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  template: ` <router-outlet></router-outlet> `,
-  styles: [
-    `
-      :host {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 2rem;
-        text-align: center;
-      }
-    `,
-  ],
+  template: `
+    <app-navbar></app-navbar>
+    <main class="container m-auto p-5">
+      <router-outlet></router-outlet>
+    </main>
+  `,
+  imports: [RouterOutlet, AppComponent, NavbarComponent],
 })
 export class AppComponent {}
